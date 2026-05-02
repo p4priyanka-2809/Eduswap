@@ -1,0 +1,12 @@
+{
+  "name": "eduswap-backend",
+  "version": "1.0.0",
+  "description": "Simple Node.js backend for EduSwap with file-based storage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

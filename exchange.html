@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSwap | Marketplace</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                cyan: { 400: '#00F5FF' },
+                dark: {
+                    bg: '#0A0A0C',
+                    panel: '#151518',
+                    card: '#1A1A1E',
+                    input: '#1C1C21'
+                }
+              },
+              fontFamily: {
+                main: ["Inter", "sans-serif"],
+                heading: ["Space Grotesk", "sans-serif"],
+              }
+            }
+          }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-main text-gray-300 bg-dark-bg selection:bg-cyan-400/30 overflow-x-hidden">
+
+    <!-- MOBILE RESPONSIVE HEADER -->
+    <header class="fixed top-0 right-0 left-0 md:left-64 z-40 bg-dark-bg/90 backdrop-blur-md flex items-center justify-between px-4 md:px-8 py-4 border-b border-white/5">
+        
+        <div class="flex items-center gap-3 w-full max-w-3xl relative">
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-btn" class="md:hidden text-white hover:text-cyan-400">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+            
+            <div class="relative w-full hidden md:block">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+                <input type="text" placeholder="Search for textbooks, novels, or study guides..." 
+                       class="w-full bg-dark-input border-none rounded-full py-3 pl-12 pr-32 text-sm focus:ring-1 focus:ring-cyan-400 text-white placeholder-gray-500">
+                <button class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-cyan-400 text-black font-semibold text-sm px-6 py-2 rounded-full hover:bg-cyan-300 transition-colors">
+                    Discover
+                </button>
+            </div>
+            
+            <!-- Mobile Search Icon Only -->
+            <div class="md:hidden flex items-center ml-auto">
+                 <button class="text-gray-400 hover:text-cyan-400"><span class="material-symbols-outlined">search</span></button>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 md:gap-5 ml-4 md:ml-8">
+            <button class="text-gray-400 hover:text-cyan-400 hidden md:block"><span class="material-symbols-outlined">local_mall</span></button>
+            <button class="text-gray-400 hover:text-cyan-400 relative">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            </button>
+            <div class="w-8 h-8 rounded-full bg-zinc-700 flex items-center justify-center font-bold text-cyan-400 border border-cyan-400/30">
+                P
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE RESPONSIVE SIDEBAR -->
+    <aside id="mobile-sidebar" class="fixed left-0 top-0 h-screen w-64 bg-dark-panel border-r border-white/5 z-50 flex flex-col transition-transform duration-300 -translate-x-full md:translate-x-0">
+        <div class="p-6">
+            <h1 class="text-2xl font-heading font-bold text-cyan-400 tracking-tight">EduSwap</h1>
+        </div>
+
+        <div class="px-6 mb-8 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-400/10 flex items-center justify-center text-cyan-400">
+                <span class="material-symbols-outlined">swap_horiz</span>
+            </div>
+            <div>
+                <h2 class="font-heading font-bold text-white text-sm">EduSwap</h2>
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest">Premium Exchange</p>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-1 text-sm font-medium">
+            <a href="exchange.html" class="flex items-center gap-3 px-4 py-3 bg-cyan-400/10 text-cyan-400 rounded-xl border border-cyan-400/20">
+                <span class="material-symbols-outlined text-[20px]">storefront</span>
+                Marketplace
+            </a>
+            <a href="resources.html" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Library
+            </a>
+            <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-[20px]">cached</span>
+                Swap Hub
+            </a>
+            <a href="message.html" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-[20px]">forum</span>
+                Inbox
+            </a>
+            <a href="profile.html" class="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span class="material-symbols-outlined text-[20px]">person</span>
+                Profile
+            </a>
+        </nav>
+
+        <div class="p-4 mt-auto">
+            <button onclick="alert('Terminal Upload: Opening secure interface to list your resource.')" id="list-book-btn" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all font-semibold text-sm">
+                <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                List a Book
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="ml-0 md:ml-64 pt-24 px-4 md:px-8 pb-12">
+        
+        <!-- Filters Scrollable horizontally on mobile -->
+        <div class="flex gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+            <button class="px-5 py-2 rounded-full border border-cyan-400 text-cyan-400 bg-cyan-400/5 text-sm whitespace-nowrap">All Genres</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Free</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Paid</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Exchange</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Computer Science</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Medicine</button>
+            <button class="px-5 py-2 rounded-full bg-dark-input text-gray-400 hover:text-white text-sm whitespace-nowrap">Art & Design</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <div class="bg-dark-card rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col group">
+                <div class="relative h-48 bg-zinc-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10"></div>
+                    <div class="w-full h-full flex items-center justify-center text-cyan-400/20 font-bold text-2xl group-hover:scale-105 transition-transform">COVER</div>
+                    <span class="absolute top-3 right-3 z-20 px-2 py-1 bg-black/60 text-cyan-400 border border-cyan-400/30 text-[9px] font-bold uppercase rounded">Exchange</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-white font-medium mb-2 leading-snug font-heading">Quantum Mechanics II</h3>
+                    <div class="flex items-center gap-2 mb-5 text-sm text-gray-500">
+                        <div class="w-5 h-5 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] text-white">A</div>
+                        <span>by Alex Rivera</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Sell</button>
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Borrow</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-card rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col group">
+                <div class="relative h-48 bg-zinc-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10"></div>
+                    <div class="w-full h-full flex items-center justify-center text-cyan-400/20 font-bold text-2xl group-hover:scale-105 transition-transform">COVER</div>
+                    <span class="absolute top-3 right-3 z-20 px-2 py-1 bg-black/60 text-cyan-400 border border-cyan-400/30 text-[9px] font-bold uppercase rounded">Free</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-white font-medium mb-2 leading-snug font-heading">Architecture of Tomorrow</h3>
+                    <div class="flex items-center gap-2 mb-5 text-sm text-gray-500">
+                        <div class="w-5 h-5 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] text-white">S</div>
+                        <span>by Sarah Chen</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Sell</button>
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Borrow</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-card rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col group">
+                <div class="relative h-48 bg-zinc-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10"></div>
+                    <div class="w-full h-full flex items-center justify-center text-cyan-400/20 font-bold text-2xl group-hover:scale-105 transition-transform">COVER</div>
+                    <span class="absolute top-3 right-3 z-20 px-2 py-1 bg-black/60 text-red-400 border border-red-400/30 text-[9px] font-bold uppercase rounded">Paid</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-white font-medium mb-2 leading-snug font-heading">Advanced Neuroscience</h3>
+                    <div class="flex items-center gap-2 mb-5 text-sm text-gray-500">
+                        <div class="w-5 h-5 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] text-white">J</div>
+                        <span>by Jordan Lee</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Sell</button>
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Borrow</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-card rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-400/30 transition-all flex flex-col group">
+                <div class="relative h-48 bg-zinc-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent z-10"></div>
+                    <div class="w-full h-full flex items-center justify-center text-cyan-400/20 font-bold text-2xl group-hover:scale-105 transition-transform">COVER</div>
+                    <span class="absolute top-3 right-3 z-20 px-2 py-1 bg-black/60 text-cyan-400 border border-cyan-400/30 text-[9px] font-bold uppercase rounded">Exchange</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-white font-medium mb-2 leading-snug font-heading">Cybersecurity Ethics</h3>
+                    <div class="flex items-center gap-2 mb-5 text-sm text-gray-500">
+                        <div class="w-5 h-5 rounded-full bg-zinc-700 flex items-center justify-center text-[10px] text-white">M</div>
+                        <span>by Marcus Vance</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Sell</button>
+                        <button class="exchange-action-btn py-2 border border-cyan-400/30 text-cyan-400 rounded-lg text-sm font-medium hover:bg-cyan-400/10">Borrow</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ADD BOOK FAB BUTTON -->
+    <button onclick="alert('Terminal Upload: Opening secure interface to list your resource.')" id="fab-add-btn" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-14 h-14 bg-cyan-400 text-black rounded-2xl flex items-center justify-center shadow-[0_0_20px_#00F5FF80] hover:scale-110 active:scale-95 transition-all z-50">
+        <span class="material-symbols-outlined text-3xl font-bold">add</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

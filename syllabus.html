@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSwap | Syllabus Archive</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        cyan: { 400: '#00F5FF' },
+                        lime: { 400: '#66ff8f' },
+                        dark: { bg: '#0A0A0C', panel: '#151518', card: '#1A1A1E' }
+                    },
+                    fontFamily: { heading: ["Space Grotesk", "sans-serif"], main: ["Inter", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-gray-300 font-main min-h-screen">
+
+    <header class="fixed top-0 right-0 left-64 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/5 flex justify-between items-center px-8 h-20">
+        <h1 class="font-heading text-xl text-white font-bold uppercase tracking-tight">Academic <span class="text-cyan-400">Syllabus</span></h1>
+        <div class="flex items-center gap-3">
+            <p class="text-xs font-bold text-white">Priyanka</p>
+            <div class="w-9 h-9 rounded-full border border-cyan-400 bg-zinc-800 flex items-center justify-center font-bold text-cyan-400">P</div>
+        </div>
+    </header>
+
+    <aside class="fixed left-0 top-0 h-full w-64 bg-dark-panel border-r border-white/5 flex flex-col z-40">
+        <div class="p-8 pt-8 mb-4">
+            <h1 class="text-2xl font-bold font-heading text-cyan-400 tracking-tight">EduSwap</h1>
+        </div>
+        <nav class="flex-1 px-4 space-y-2">
+            <a href="department.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-heading text-sm font-semibold">Back to Hub</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="ml-64 pt-28 px-12 max-w-7xl pb-20">
+        
+        <!-- ========================================== -->
+        <!-- 1. DEPARTMENT SELECTOR PAGE                -->
+        <!-- ========================================== -->
+        <div id="dept-view">
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-white font-heading">Select Department Node</h2>
+                <p class="text-zinc-500 text-sm mt-2">Pick a branch to access the official academic curriculum.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- CSE -->
+                <div onclick="showDepartment('cse')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">terminal</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">CSE</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Computer Science</p>
+                </div>
+
+                <!-- MLT -->
+                <div onclick="showDepartment('mlt')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">biotech</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MLT</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Medical Lab Tech</p>
+                </div>
+
+                <!-- MOP -->
+                <div onclick="showDepartment('mop')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">work</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MOP</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Office Protocol</p>
+                </div>
+
+                <!-- MECH -->
+                <div onclick="showDepartment('mech')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">settings_suggest</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MECH</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Kinetic Systems</p>
+                </div>
+
+                <!-- AA -->
+                <div onclick="showDepartment('aa')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-[#a7ffb3] text-3xl">architecture</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">AA</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Applied Arts</p>
+                </div>
+
+                <!-- ECE -->
+                <div onclick="showDepartment('ece')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">memory</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">ECE</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Circuits & Signals</p>
+                </div>
+
+                <!-- B.PHARMACY -->
+                <div onclick="showDepartment('bpharmacy')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-lime-400/50 cursor-pointer border-lime-400/20">
+                    <div class="mb-4"><span class="material-symbols-outlined text-lime-400 text-3xl">medication</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">B.PHARMACY</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Degree Node</p>
+                </div>
+
+                <!-- D.PHARMACY -->
+                <div onclick="showDepartment('dpharmacy')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-cyan-400/50 cursor-pointer border-cyan-400/20">
+                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">vaccines</span></div>
+                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">D.PHARMACY</h3>
+                    <p class="text-xs text-zinc-500 font-caption opacity-60">Diploma Node</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 2. SEMESTERS PAGES (DIRECT PDF LINKS)      -->
+        <!-- ========================================== -->
+
+        <!-- ---------------- CSE ---------------- -->
+        <div id="sem-view-cse" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">CSE Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/cse_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/cse_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/cse_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/cse_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/cse_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/cse_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- MLT ---------------- -->
+        <div id="sem-view-mlt" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">MLT Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/mlt_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/mlt_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/mlt_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/mlt_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/mlt_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/mlt_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- MOP ---------------- -->
+        <div id="sem-view-mop" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">MOP Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/mop_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/mop_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/mop_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/mop_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/mop_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/mop_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- MECH ---------------- -->
+        <div id="sem-view-mech" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">MECH Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/mech_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/mech_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/mech_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/mech_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/mech_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/mech_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- AA ---------------- -->
+        <div id="sem-view-aa" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">Architecture Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/aa_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/aa_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/aa_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/aa_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/aa_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/aa_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- ECE ---------------- -->
+        <div id="sem-view-ece" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">ECE Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/ece_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/ece_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/ece_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/ece_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/ece_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/ece_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+            </div>
+        </div>
+
+        <!-- ---------------- B.PHARMACY (8 Semesters, Lime Color) ---------------- -->
+        <div id="sem-view-bpharmacy" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">B.Pharmacy Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/bpharmacy_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/bpharmacy_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/bpharmacy_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/bpharmacy_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+                <a href="files/bpharmacy_sem5_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 5</a>
+                <a href="files/bpharmacy_sem6_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 6</a>
+                <a href="files/bpharmacy_sem7_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 7</a>
+                <a href="files/bpharmacy_sem8_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-lime-400 hover:shadow-[0_0_15px_rgba(102,255,143,0.2)] hover:bg-lime-400/5 transition-all text-lg font-bold font-heading text-white">Sem 8</a>
+            </div>
+        </div>
+
+        <!-- ---------------- D.PHARMACY (4 Semesters) ---------------- -->
+        <div id="sem-view-dpharmacy" class="dept-sem-container hidden">
+            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
+                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
+            </button>
+            <h2 class="text-4xl font-bold text-white font-heading mb-8 uppercase tracking-tighter">D.Pharmacy Syllabus</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+                <a href="files/dpharmacy_sem1_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 1</a>
+                <a href="files/dpharmacy_sem2_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 2</a>
+                <a href="files/dpharmacy_sem3_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 3</a>
+                <a href="files/dpharmacy_sem4_syllabus.pdf" target="_blank" class="flex items-center justify-center py-6 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:bg-cyan-400/5 transition-all text-lg font-bold font-heading text-white">Sem 4</a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function showDepartment(deptName) {
+            // Department Select karne wali grid ko chupao
+            document.getElementById('dept-view').classList.add('hidden');
+            
+            // Sabhi semester views ko ek baar hide kar do
+            let allSemViews = document.querySelectorAll('.dept-sem-container');
+            allSemViews.forEach(function(view) {
+                view.classList.add('hidden');
+            });
+            
+            // Ab user ne jo branch click ki hai, sirf uska page dikha do
+            let targetId = 'sem-view-' + deptName;
+            document.getElementById(targetId).classList.remove('hidden');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
