@@ -4,30 +4,17 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>EduSwap - Dashboard</title>
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
-    
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-              "primary-container": "#00f5ff",
-              "secondary-fixed": "#66ff8f",
-              "surface-variant": "#353437",
-              "background": "#0A0A0C",
-            },
-            "fontFamily": {
-              "headline-md": ["Space Grotesk"],
-              "body-lg": ["Inter"],
-              "caption": ["Inter"],
-              "label-md": ["Space Grotesk"],
-            }
+            "colors": { "primary-container": "#00f5ff", "secondary-fixed": "#66ff8f", "background": "#0A0A0C" },
+            "fontFamily": { "headline-md": ["Space Grotesk"], "body-lg": ["Inter"], "label-md": ["Space Grotesk"] }
           }
         }
       }
@@ -35,85 +22,85 @@
 </head>
 <body class="font-body-md text-gray-200 bg-background min-h-screen">
 
-    <!-- ========================================== -->
-    <!-- SIDEBAR (MENU)                             -->
-    <!-- ========================================== -->
+    <!-- SIDEBAR -->
     <aside class="fixed left-0 top-0 h-full flex flex-col p-6 bg-[#0A0A0C]/70 backdrop-blur-[32px] font-['Space_Grotesk'] tracking-tight w-64 border-r border-white/20 shadow-[10px_0_30px_-5px_rgba(0,245,255,0.1)] z-50">
         <div class="mb-10">
             <h1 class="text-2xl font-black text-[#00F5FF] drop-shadow-[0_0_10px_#00F5FF80]">EduSwap</h1>
             <p class="text-[10px] text-zinc-500 tracking-[0.2em] mt-1">Terminal v1.0</p>
         </div>
-        
-        <!-- Yahan rakha hai tumhara sahi Nav Menu -->
         <nav class="flex-1 space-y-2 mt-4">
-            
-            <!-- 1. Dashboard -->
-            <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+            <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
                 <span class="material-symbols-outlined">dashboard</span>
                 <span class="font-label-md font-semibold text-sm">Dashboard</span>
             </a>
-
-            <!-- 2. Exchange -->
-            <a href="exchange.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+            <a href="exchange.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
                 <span class="material-symbols-outlined">swap_horiz</span>
                 <span class="font-label-md font-semibold text-sm">Exchange</span>
             </a>
-
-            <!-- 3. Resources (Department Hub par jayega) -->
-            <a href="department.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+            <a href="department.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
                 <span class="material-symbols-outlined">menu_book</span>
                 <span class="font-label-md font-semibold text-sm">Resources</span>
             </a>
-           
-            <!-- 4. Network -->
-            <a href="network.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group">
+            <a href="network.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
                 <span class="material-symbols-outlined">group</span>
                 <span class="font-label-md font-semibold text-sm">Network</span>
             </a>
-            
+            <a href="resources.html" class="flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
+                <span class="material-symbols-outlined">folder_open</span>
+                <span class="font-label-md font-semibold text-sm">My Notes</span>
+            </a>
         </nav>
-
         <div class="mt-auto">
-            <button onclick="handlePostClick()" class="w-full py-3 px-4 border border-[#00F5FF] text-[#00F5FF] rounded-lg font-label-md hover:bg-[#00F5FF]/10 transition-all duration-300 shadow-[0_0_10px_#00f5ff40] active:scale-95">
-                Initiate Post
+            <button onclick="handlePostClick()" class="w-full py-3 px-4 border border-[#00F5FF] text-[#00F5FF] rounded-lg font-label-md hover:bg-[#00F5FF]/10 transition-all duration-300 shadow-[0_0_10px_#00f5ff40] active:scale-95 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">upload_file</span>
+                Upload Note
             </button>
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- TOP HEADER                                 -->
-    <!-- ========================================== -->
-    <header class="fixed top-0 right-0 left-64 z-40 flex items-center justify-between px-8 bg-[#0A0A0C]/40 backdrop-blur-md w-auto h-16 border-b border-white/10 font-['Space_Grotesk'] font-medium">
+    <!-- HEADER -->
+    <header class="fixed top-0 right-0 left-64 z-40 flex items-center justify-between px-8 bg-[#0A0A0C]/40 backdrop-blur-md h-16 border-b border-white/10 font-['Space_Grotesk'] font-medium">
         <div class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 w-96 focus-within:ring-1 focus-within:ring-[#00F5FF] transition-all">
             <span class="material-symbols-outlined text-zinc-500 text-sm">search</span>
             <input class="bg-transparent border-none focus:ring-0 text-sm text-white placeholder-zinc-500 w-full outline-none" placeholder="Search academic nodes..." type="text"/>
         </div>
         <div class="flex items-center gap-6">
-            <!-- Logout Button (Naya Feature) -->
             <button onclick="logoutUser()" class="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors text-sm font-bold">
                 <span class="material-symbols-outlined text-sm">logout</span> Logout
             </button>
             <div class="flex items-center gap-3 pl-4 border-l border-white/10">
                 <div class="text-right">
-                    <p class="text-xs font-bold text-white">Priyanka</p>
-                    <p class="text-[10px] text-[#00F5FF]">CSE Department</p>
+                    <p class="text-xs font-bold text-white" data-user-name>Student</p>
+                    <p class="text-[10px] text-[#00F5FF]" data-user-dept>CSE Department</p>
                 </div>
-                <div class="w-8 h-8 rounded-full border border-[#00F5FF] bg-zinc-800 flex items-center justify-center font-bold text-[#00F5FF] text-xs">P</div>
+                <div class="w-8 h-8 rounded-full border border-[#00F5FF] bg-zinc-800 flex items-center justify-center font-bold text-[#00F5FF] text-xs" data-user-avatar>S</div>
             </div>
         </div>
     </header>
 
-    <!-- ========================================== -->
-    <!-- MAIN CONTENT                               -->
-    <!-- ========================================== -->
+    <!-- MAIN -->
     <main class="ml-64 pt-24 px-8 pb-12 grid grid-cols-12 gap-8">
-        
         <section class="col-span-8 space-y-8">
             <div class="flex gap-3 mb-6">
-                <span class="px-4 py-1 rounded-full bg-primary-container/10 border border-[#00F5FF] text-[#00F5FF] text-xs font-label-md">All Streams</span>
+                <span class="px-4 py-1 rounded-full bg-primary-container/10 border border-[#00F5FF] text-[#00F5FF] text-xs font-label-md cursor-pointer">All Streams</span>
                 <span class="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs font-label-md hover:border-white/20 transition-all cursor-pointer">CSE Only</span>
             </div>
 
+            <!-- Quick Upload Card -->
+            <div class="p-6 rounded-xl bg-[#151518] border border-cyan-400/20 border-dashed hover:border-cyan-400/50 transition-all cursor-pointer group" onclick="handlePostClick()">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 group-hover:shadow-[0_0_15px_rgba(0,245,255,0.2)] transition-all">
+                        <span class="material-symbols-outlined text-2xl">add_circle</span>
+                    </div>
+                    <div>
+                        <p class="text-white font-heading font-semibold">Share a Note or Resource</p>
+                        <p class="text-zinc-500 text-xs">Upload PDF, images or write notes for your classmates</p>
+                    </div>
+                    <span class="ml-auto text-cyan-400 text-xs font-heading font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">Click to Upload →</span>
+                </div>
+            </div>
+
+            <!-- Sample Post -->
             <div class="p-6 rounded-xl relative overflow-hidden group bg-[#151518] border border-white/5 shadow-lg hover:border-white/10 transition-all">
                 <div class="flex items-start justify-between mb-4">
                     <div class="flex items-center gap-3">
@@ -127,27 +114,25 @@
                 <p class="font-body-md text-gray-300 mb-6 leading-relaxed">
                     Just uploaded my latest research on <span class="text-[#00F5FF] font-bold">Java Practicals 6 to 10</span>. Please review the inheritance logic I used in Practical 8!
                 </p>
-                
                 <div class="py-4 flex justify-center">
-                    <div class="w-full max-w-md h-64 bg-zinc-900 rounded-lg flex flex-col p-4 relative border border-[#00F5FF]/30 shadow-[0_0_20px_rgba(0,245,255,0.1)]">
+                    <div class="w-full max-w-md h-48 bg-zinc-900 rounded-lg flex flex-col p-4 border border-[#00F5FF]/30 shadow-[0_0_20px_rgba(0,245,255,0.1)]">
                         <div class="flex items-center gap-2 mb-4 border-b border-white/10 pb-2">
                             <span class="material-symbols-outlined text-[#00F5FF]">description</span>
                             <span class="text-xs font-label-md tracking-wider text-white">JAVA_PRAC_V2.pdf</span>
                         </div>
-                        <div class="flex-1 bg-white/5 rounded p-3 space-y-2 overflow-hidden">
+                        <div class="flex-1 bg-white/5 rounded p-3 space-y-2">
                             <div class="h-2 w-3/4 bg-[#00F5FF]/20 rounded"></div>
                             <div class="h-2 w-full bg-white/10 rounded"></div>
                             <div class="h-2 w-5/6 bg-white/10 rounded"></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex items-center gap-8 mt-6">
-                    <button class="flex items-center gap-2 text-zinc-400 hover:text-[#66ff8f] transition-colors">
+                <div class="flex items-center gap-8 mt-4">
+                    <button class="flex items-center gap-2 text-zinc-400 hover:text-red-400 transition-colors" onclick="toggleLike(this)">
                         <span class="material-symbols-outlined text-[20px]">favorite</span>
                         <span class="text-sm font-label-md">12</span>
                     </button>
-                    <button class="flex items-center gap-2 text-[#00F5FF] hover:scale-110 transition-transform">
+                    <button class="flex items-center gap-2 text-[#00F5FF]" onclick="openComments()">
                         <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
                         <span class="text-sm font-label-md">4</span>
                     </button>
@@ -161,26 +146,25 @@
                 <div class="relative z-10">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="p-1 rounded-full border border-[#00F5FF]/50">
-                            <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-[#00F5FF]">P</div>
+                            <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-[#00F5FF]" data-user-avatar>S</div>
                         </div>
                         <div>
-                            <p class="text-white font-bold text-sm">Academic Profile</p>
+                            <p class="text-white font-bold text-sm" data-user-name>Student</p>
                             <p class="text-xs text-[#00F5FF]">Govt. Polytechnic Patiala</p>
                         </div>
                     </div>
                     <div class="space-y-3">
                         <div>
                             <div class="flex justify-between text-[10px] text-zinc-400 mb-1 font-bold">
-                                <span>Attendance Level</span>
-                                <span>88%</span>
+                                <span>Attendance Level</span><span>88%</span>
                             </div>
                             <div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                                 <div class="h-full bg-[#00F5FF] w-[88%] shadow-[0_0_8px_#00F5FF]"></div>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4 mt-4">
-                            <div class="text-center p-2 rounded bg-white/5 border border-white/5">
-                                <p class="text-lg font-black text-white">4</p>
+                            <div class="text-center p-2 rounded bg-white/5 border border-white/5" id="notes-count-widget">
+                                <p class="text-lg font-black text-white">0</p>
                                 <p class="text-[9px] text-zinc-500 uppercase tracking-tighter">Notes Uploaded</p>
                             </div>
                             <div class="text-center p-2 rounded bg-white/5 border border-white/5">
@@ -191,10 +175,39 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Quick Links -->
+            <div class="p-6 rounded-xl bg-[#151518] border border-white/5">
+                <h3 class="font-heading text-white font-bold text-sm mb-4 uppercase tracking-widest">Quick Access</h3>
+                <div class="space-y-2">
+                    <a href="results.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-all text-zinc-400 hover:text-white group">
+                        <span class="material-symbols-outlined text-[18px] text-lime-400">fact_check</span>
+                        <span class="text-sm font-heading">Check Results</span>
+                        <span class="material-symbols-outlined text-[14px] ml-auto opacity-0 group-hover:opacity-100 transition-all">arrow_forward</span>
+                    </a>
+                    <a href="syllabus.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-all text-zinc-400 hover:text-white group">
+                        <span class="material-symbols-outlined text-[18px] text-cyan-400">menu_book</span>
+                        <span class="text-sm font-heading">View Syllabus</span>
+                        <span class="material-symbols-outlined text-[14px] ml-auto opacity-0 group-hover:opacity-100 transition-all">arrow_forward</span>
+                    </a>
+                    <a href="quiz.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-all text-zinc-400 hover:text-white group">
+                        <span class="material-symbols-outlined text-[18px] text-yellow-400">bolt</span>
+                        <span class="text-sm font-heading">Take a Quiz</span>
+                        <span class="material-symbols-outlined text-[14px] ml-auto opacity-0 group-hover:opacity-100 transition-all">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
         </aside>
     </main>
 
-    <!-- Humesha Body khatam hone se pehle Script aayegi -->
     <script src="script.js"></script>
+    <script>
+        // Update notes count on dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            const notes = JSON.parse(localStorage.getItem('eduswap_notes') || '[]');
+            const el = document.getElementById('notes-count-widget');
+            if (el) el.querySelector('p').textContent = notes.length;
+        });
+    </script>
 </body>
 </html>
