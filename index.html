@@ -4,34 +4,24 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>EduSwap Terminal | Protocol v1.0.4</title>
-    
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            colors: {
-              "primary-container": "#00f5ff", "primary": "#e9feff", "secondary": "#a7ffb3",
-              "on-surface-variant": "#b9caca", "surface-dim": "#131315", "surface": "#131315", "background": "#131315"
-            },
-            fontFamily: {
-              "body-md": ["Inter"], "display-xl": ["Space Grotesk"], "headline-md": ["Space Grotesk"],
-              "label-md": ["Space Grotesk"], "caption": ["Inter"]
-            }
+            colors: { "primary-container": "#00f5ff", "primary": "#e9feff", "secondary": "#a7ffb3", "on-surface-variant": "#b9caca", "background": "#131315" },
+            fontFamily: { "body-md": ["Inter"], "display-xl": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-md": ["Space Grotesk"], "caption": ["Inter"] }
           }
         }
       }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="font-body-md selection:bg-primary-container selection:text-black">
 
-    <!-- Header (Same as before) -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0C]/60 backdrop-blur-[32px] border-b border-white/10 flex justify-between items-center px-6 py-4">
         <div class="flex items-center gap-8">
             <span class="text-2xl font-bold tracking-tighter text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)] font-headline-lg">EduSwap</span>
@@ -42,7 +32,6 @@
         </div>
     </header>
 
-    <!-- Sidebar (Same as before) -->
     <aside class="fixed left-0 top-0 h-full w-20 md:w-64 z-40 bg-[#0A0A0C]/40 backdrop-blur-[40px] border-r border-white/5 flex flex-col pt-24 pb-8">
         <div class="px-6 mb-8 hidden md:block">
             <h2 class="text-cyan-400 font-black font-headline-md text-xs uppercase tracking-widest">EduSwap Terminal</h2>
@@ -57,70 +46,68 @@
     </aside>
 
     <main class="ml-20 md:ml-64 pt-20 min-h-screen relative overflow-hidden flex items-center justify-center">
-        <!-- Background Effects -->
         <div class="absolute inset-0 z-0">
             <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#00f5ff]/10 blur-[120px] rounded-full"></div>
         </div>
-
         <div class="relative z-10 w-full max-w-7xl px-8 perspective-container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <!-- Login Form Area -->
+            <!-- Login Form -->
             <div class="lg:col-span-5 transform-gpu rotate-y-12 floating">
                 <div class="glass-card p-10 rounded-xl neon-glow-cyan">
                     <div class="mb-8">
-                        <h1 class="font-display-xl text-primary leading-none mb-2">Login</h1>
-                        <p class="text-on-surface-variant font-body-md opacity-70">Initialize your academic node</p>
+                        <h1 class="font-display-xl text-primary leading-none mb-2 text-3xl font-bold">Login</h1>
+                        <p class="text-on-surface-variant font-body-md opacity-70 text-sm">Initialize your academic node</p>
                     </div>
                     <form id="login-form" class="space-y-6">
                         <div class="space-y-2">
-                            <label class="font-label-md text-primary uppercase opacity-60">Roll Number</label>
-                            <input id="roll-input" class="w-full bg-white/5 border-b border-white/20 focus:border-cyan-400 text-white py-3 outline-none transition-all" placeholder="Enter Roll No." type="text">
+                            <label class="font-label-md text-primary uppercase opacity-60 text-xs tracking-widest">Roll Number (12 digits)</label>
+                            <input id="roll-input" class="w-full bg-white/5 border-b border-white/20 focus:border-cyan-400 text-white py-3 outline-none transition-all text-sm" placeholder="Enter 12-digit Roll No." type="text" maxlength="12">
                         </div>
                         <div class="space-y-2">
-                            <label class="font-label-md text-primary uppercase opacity-60">Password</label>
-                            <input class="w-full bg-white/5 border-b border-white/20 focus:border-cyan-400 text-white py-3 outline-none transition-all" placeholder="••••••••" type="password">
+                            <label class="font-label-md text-primary uppercase opacity-60 text-xs tracking-widest">Password</label>
+                            <input class="w-full bg-white/5 border-b border-white/20 focus:border-cyan-400 text-white py-3 outline-none transition-all text-sm" placeholder="••••••••" type="password">
                         </div>
                         <div class="pt-4">
-                            <button id="login-btn" type="submit" class="w-full py-4 relative group border border-cyan-400 text-cyan-400 font-headline-md uppercase tracking-widest hover:text-black transition-all">
+                            <button id="login-btn" type="submit" class="w-full py-4 relative group border border-cyan-400 text-cyan-400 font-headline-md uppercase tracking-widest hover:text-black transition-all overflow-hidden text-sm">
                                 <span class="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                                 <span class="relative z-10">Access Terminal</span>
                             </button>
                         </div>
+                        <div class="pt-3">
+                            <button onclick="createSignupModal()" type="button" class="w-full py-3 relative group border border-white/20 text-white font-headline-md uppercase tracking-widest hover:border-cyan-400 hover:text-cyan-400 transition-all overflow-hidden text-sm">
+                                <span class="relative z-10">New Here? Create Account</span>
+                            </button>
+                        </div>
                     </form>
+                    <p class="text-zinc-600 text-[10px] mt-6 text-center uppercase tracking-widest">Govt. Polytechnic College Patiala</p>
                 </div>
             </div>
 
-            <!-- Department Grid Area (Ye ab chota ho gaya hai) -->
-            <div id="dynamic-dept-grid" class="lg:col-span-7 transform-gpu rotate-y-neg-12 grid grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- Javascript yahan cards dale gaa -->
-            </div>
-
+            <!-- Department Grid -->
+            <div id="dynamic-dept-grid" class="lg:col-span-7 transform-gpu rotate-y-neg-12 grid grid-cols-2 md:grid-cols-3 gap-4"></div>
         </div>
     </main>
 
-    <!-- Is chote se script ne sara HTML chota kar diya -->
     <script>
         const departments = [
             { id: 'CSE', name: 'Computer Science', icon: 'code', color: 'text-cyan-400' },
             { id: 'AA', name: 'Architecture Assistantship', icon: 'architecture', color: 'text-[#a7ffb3]' },
             { id: 'MECH', name: 'Kinetic Systems', icon: 'settings_suggest', color: 'text-cyan-400' },
-            { id: 'B.PHARMACY', name: 'Degree Node', icon: 'medication', color: 'text-lime-400', click: "openSemesters('B.PHARMACY')" },
-            { id: 'D.PHARMACY', name: 'Diploma Node', icon: 'vaccines', color: 'text-cyan-400', click: "openSemesters('D.PHARMACY')" },
+            { id: 'B.PHARMACY', name: 'Degree Node', icon: 'medication', color: 'text-lime-400' },
+            { id: 'D.PHARMACY', name: 'Diploma Node', icon: 'vaccines', color: 'text-cyan-400' },
             { id: 'MLT', name: 'Medical Lab Technology', icon: 'biotech', color: 'text-cyan-400' },
             { id: 'MOP', name: 'Office Protocol', icon: 'work', color: 'text-cyan-400' }
         ];
-
         const grid = document.getElementById('dynamic-dept-grid');
         departments.forEach(dept => {
-            let onClickAction = dept.click ? `onclick="${dept.click}"` : '';
             grid.innerHTML += `
-            <div ${onClickAction} class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
+            <div class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
                 <div class="mb-4"><span class="material-symbols-outlined ${dept.color} text-3xl">${dept.icon}</span></div>
                 <h3 class="font-headline-md text-primary text-sm uppercase tracking-wider mb-1">${dept.id}</h3>
                 <p class="text-xs text-on-surface-variant font-caption opacity-60">${dept.name}</p>
             </div>`;
         });
     </script>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
