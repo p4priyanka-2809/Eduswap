@@ -114,7 +114,7 @@
         </nav>
 
         <div class="p-4 mt-auto">
-            <button onclick="alert('Terminal Upload: Opening secure interface to list your resource.')" id="list-book-btn" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all font-semibold text-sm">
+            <button onclick="openUploadModal()" id="list-book-btn" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all font-semibold text-sm">
                 <span class="material-symbols-outlined text-[18px]">add_circle</span>
                 List a Book
             </button>
@@ -217,10 +217,40 @@
     </main>
 
     <!-- ADD BOOK FAB BUTTON -->
-    <button onclick="alert('Terminal Upload: Opening secure interface to list your resource.')" id="fab-add-btn" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-14 h-14 bg-cyan-400 text-black rounded-2xl flex items-center justify-center shadow-[0_0_20px_#00F5FF80] hover:scale-110 active:scale-95 transition-all z-50">
+    <button onclick="openUploadModal()" id="fab-add-btn" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-14 h-14 bg-cyan-400 text-black rounded-2xl flex items-center justify-center shadow-[0_0_20px_#00F5FF80] hover:scale-110 active:scale-95 transition-all z-50">
         <span class="material-symbols-outlined text-3xl font-bold">add</span>
     </button>
 
     <script src="script.js"></script>
+    <script>
+        // Wire up exchange buttons to use proper modals
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.exchange-action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const card = this.closest('.bg-dark-card');
+              const title = card?.querySelector('h3')?.textContent || 'Book';
+              const author = card?.querySelector('.text-gray-500')?.lastChild?.textContent || 'Unknown';
+              const action = this.textContent.trim();
+              createExchangeModal(action, title, author);
+            });
+          });
+          
+          // Wire filter buttons
+          document.querySelectorAll('button[class*="rounded-full"]').forEach(btn => {
+            if (btn.textContent.includes('Genres') || btn.textContent.includes('Computer') || 
+                btn.textContent.includes('Art') || btn.textContent.includes('Exchange')) {
+              btn.addEventListener('click', function() {
+                document.querySelectorAll('button[class*="rounded-full"]').forEach(b => {
+                  b.classList.remove('border-cyan-400', 'text-cyan-400', 'bg-cyan-400/5');
+                  b.classList.add('bg-dark-input', 'text-gray-400');
+                });
+                this.classList.remove('bg-dark-input', 'text-gray-400');
+                this.classList.add('border-cyan-400', 'text-cyan-400', 'bg-cyan-400/5');
+                showToast('Filtered: ' + this.textContent.trim(), 'info');
+              });
+            }
+          });
+        });
+    </script>
 </body>
 </html>
