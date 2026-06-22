@@ -49,330 +49,107 @@
 
     <main class="ml-64 pt-28 px-12 max-w-7xl pb-20">
         
-        <!-- ========================================== -->
-        <!-- 1. DEPARTMENT SELECTOR PAGE                -->
-        <!-- ========================================== -->
-        <div id="dept-view">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold text-white font-heading">Select Department Node</h2>
-                <p class="text-zinc-500 text-sm mt-2">Pick a branch to access the official academic curriculum.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- CSE -->
-                <div onclick="showDepartment('cse')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">terminal</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">CSE</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Computer Science</p>
-                </div>
-
-                <!-- IT -->
-                <div onclick="showDepartment('it')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">cloud</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">IT</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Information Tech</p>
-                </div>
-
-                <!-- MLT -->
-                <div onclick="showDepartment('mlt')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">biotech</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MLT</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Medical Lab Tech</p>
-                </div>
-
-                <!-- MOP -->
-                <div onclick="showDepartment('mop')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">work</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MOP</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Office Protocol</p>
-                </div>
-
-                <!-- MECH -->
-                <div onclick="showDepartment('mech')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">settings_suggest</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MECH</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Kinetic Systems</p>
-                </div>
-
-                <!-- AA -->
-                <div onclick="showDepartment('aa')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-[#a7ffb3] text-3xl">architecture</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">AA</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Applied Arts</p>
-                </div>
-
-                <!-- ECE -->
-                <div onclick="showDepartment('ece')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 cursor-pointer">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">memory</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">ECE</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Circuits & Signals</p>
-                </div>
-
-                <!-- B.PHARMACY -->
-                <div onclick="showDepartment('bpharmacy')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-lime-400/50 cursor-pointer border-lime-400/20">
-                    <div class="mb-4"><span class="material-symbols-outlined text-lime-400 text-3xl">medication</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">B.PHARMACY</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Degree Node</p>
-                </div>
-
-                <!-- D.PHARMACY -->
-                <div onclick="showDepartment('dpharmacy')" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-cyan-400/50 cursor-pointer border-cyan-400/20">
-                    <div class="mb-4"><span class="material-symbols-outlined text-cyan-400 text-3xl">vaccines</span></div>
-                    <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">D.PHARMACY</h3>
-                    <p class="text-xs text-zinc-500 font-caption opacity-60">Diploma Node</p>
-                </div>
-            </div>
+        <div class="mb-10">
+            <h2 class="text-3xl font-bold text-white font-heading">Select Department Node</h2>
+            <p class="text-zinc-500 text-sm mt-2">Click on a branch to directly download the official curriculum PDF.</p>
         </div>
 
-        <!-- ========================================== -->
-        <!-- 2. SYLLABUS PAGES (DIRECT PDF LINKS)       -->
-        <!-- ========================================== -->
-
-        <!-- ---------------- CSE (Computer Science) ---------------- -->
-        <div id="sem-view-cse" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">CSE - Computer Science</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+        <!-- Yahan click karte hi direct PDF download ya open hogi, koi extra view nahi aayega -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <!-- CSE -->
+            <a href="syllabus/CSE_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">terminal</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/CSE_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download CSE Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">CSE</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Computer Science</p>
+            </a>
 
-        <!-- ---------------- IT (Information Technology) ---------------- -->
-        <div id="sem-view-it" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">IT - Information Technology</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- IT -->
+            <a href="syllabus/IT_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">cloud</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/IT_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download IT Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">IT</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Information Tech</p>
+            </a>
 
-        <!-- ---------------- MLT (Medical Lab Tech) ---------------- -->
-        <div id="sem-view-mlt" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">MLT - Medical Laboratory Technology</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- MLT -->
+            <a href="syllabus/MLT_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">biotech</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/MLT_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download MLT Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MLT</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Medical Lab Tech</p>
+            </a>
 
-        <!-- ---------------- MOP (Management & Office Protocol) ---------------- -->
-        <div id="sem-view-mop" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">MOP - Office Management Protocol</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- MOP -->
+            <a href="syllabus/MOP_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">work</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/MOP_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download MOP Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MOP</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Office Protocol</p>
+            </a>
 
-        <!-- ---------------- MECH (Mechanical Engineering) ---------------- -->
-        <div id="sem-view-mech" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">MECH - Mechanical Engineering</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- MECH -->
+            <a href="syllabus/Mech_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">settings_suggest</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/Mech_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download MECH Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">MECH</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Kinetic Systems</p>
+            </a>
 
-        <!-- ---------------- AA (Architecture) ---------------- -->
-        <div id="sem-view-aa" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">AA - Architecture</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-[#a7ffb3] text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- AA -->
+            <a href="syllabus/AA_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-[#a7ffb3] text-3xl">architecture</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-[#a7ffb3] text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/AA_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-lime-500/20 to-lime-500/10 border border-lime-400/50 text-lime-400 rounded-xl font-bold hover:border-lime-400 hover:shadow-[0_0_20px_rgba(102,255,143,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download AA Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">AA</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Applied Arts</p>
+            </a>
 
-        <!-- ---------------- ECE (Electronics & Communication) ---------------- -->
-        <div id="sem-view-ece" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">ECE - Electronics & Communication</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-cyan-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All semesters and subjects</p>
-                    </div>
+            <!-- ECE -->
+            <a href="syllabus/ECE_Dec23.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-white/20 block">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-cyan-400 text-3xl">memory</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-cyan-400 text-sm transition-all">download</span>
                 </div>
-                <a href="syllabus/ECE_Dec23.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-cyan-500/10 border border-cyan-400/50 text-cyan-400 rounded-xl font-bold hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download ECE Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">ECE</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Circuits & Signals</p>
+            </a>
 
-        <!-- ---------------- B.PHARMACY (Bachelor of Pharmacy) - Lime Color ------- -->
-        <div id="sem-view-bpharmacy" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-lime-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">B.PHARMACY - Bachelor of Pharmacy</h2>
-                <p class="text-zinc-500 text-sm mt-2">Official syllabus for all semesters (December 2023)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-lime-400 text-4xl">description</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Complete Syllabus</h3>
-                        <p class="text-zinc-400 text-sm">All 8 semesters and subjects</p>
-                    </div>
+            <!-- B.PHARMACY -->
+            <a href="syllabus/javaa.pdf" target="_blank" class="glass-card p-6 rounded-lg group hover:scale-105 transition-all duration-500 hover:border-lime-400/50 block border border-lime-400/10">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-lime-400 text-3xl">medication</span>
+                    <span class="material-symbols-outlined text-zinc-600 group-hover:text-lime-400 text-sm transition-all">download</span>
                 </div>
-                <p class="text-zinc-400 text-sm mb-4">Complete pharmaceutical curriculum covering theory, practicals, and internships across all years.</p>
-                <a href="syllabus/javaa.pdf" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-lime-500/20 to-lime-500/10 border border-lime-400/50 text-lime-400 rounded-xl font-bold hover:border-lime-400 hover:shadow-[0_0_20px_rgba(102,255,143,0.3)] transition-all">
-                    <span class="material-symbols-outlined">download</span>
-                    Download B.Pharmacy Syllabus (PDF)
-                </a>
-                <p class="text-zinc-500 text-xs mt-4">Updated: December 2023 | Format: PDF | Duration: 4 Years (8 Semesters)</p>
-            </div>
-        </div>
+                <h3 class="font-heading text-white text-sm uppercase tracking-wider mb-1">B.PHARMACY</h3>
+                <p class="text-xs text-zinc-500 font-caption opacity-60">Degree Node</p>
+            </a>
 
-        <!-- Note: D.PHARMACY not available in current syllabus directory -->
-        <!-- D.Pharmacy placeholder for future use -->
-        <div id="sem-view-dpharmacy" class="dept-sem-container hidden">
-            <button onclick="location.reload()" class="text-cyan-400 text-sm font-bold flex items-center mb-8 hover:underline transition-all">
-                <span class="material-symbols-outlined mr-1">arrow_back</span> Change Dept
-            </button>
-            <div class="mb-8">
-                <h2 class="text-4xl font-bold text-white font-heading uppercase tracking-tighter">D.PHARMACY - Diploma Pharmacy</h2>
-                <p class="text-zinc-500 text-sm mt-2">Diploma programme syllabus (Coming Soon)</p>
-            </div>
-            <div class="bg-[#151518] border border-white/10 rounded-2xl p-8">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="material-symbols-outlined text-gray-500 text-4xl">hourglass_empty</span>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Syllabus Coming Soon</h3>
-                        <p class="text-zinc-400 text-sm">D.Pharmacy syllabus will be available shortly</p>
-                    </div>
+            <!-- D.PHARMACY (Coming Soon - Locked State) -->
+            <div class="glass-card p-6 rounded-lg border border-cyan-400/5 opacity-50 cursor-not-allowed pointer-events-none relative overflow-hidden">
+                <div class="mb-4 flex justify-between items-start">
+                    <span class="material-symbols-outlined text-zinc-500 text-3xl">vaccines</span>
+                    <span class="material-symbols-outlined text-zinc-500 text-sm">lock</span>
                 </div>
-                <button disabled class="inline-flex items-center gap-3 px-8 py-4 bg-gray-500/10 border border-gray-500/30 text-gray-500 rounded-xl font-bold cursor-not-allowed opacity-50">
-                    <span class="material-symbols-outlined">lock</span>
-                    Not Available Yet
-                </button>
-                <p class="text-zinc-500 text-xs mt-4">Please check back soon for D.Pharmacy syllabus updates</p>
+                <h3 class="font-heading text-zinc-400 text-sm uppercase tracking-wider mb-1">D.PHARMACY</h3>
+                <p class="text-xs text-zinc-600 font-caption">Coming Soon</p>
             </div>
-        </div>
 
+        </div>
     </main>
 
-    <script>
-        function showDepartment(deptName) {
-            // Department Select karne wali grid ko chupao
-            document.getElementById('dept-view').classList.add('hidden');
-            
-            // Sabhi semester views ko ek baar hide kar do
-            let allSemViews = document.querySelectorAll('.dept-sem-container');
-            allSemViews.forEach(function(view) {
-                view.classList.add('hidden');
-            });
-            
-            // Ab user ne jo branch click ki hai, sirf uska page dikha do
-            let targetId = 'sem-view-' + deptName;
-            document.getElementById(targetId).classList.remove('hidden');
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
